@@ -189,7 +189,7 @@ private
       self.options += [{:output => tmp_file.path}]
       self.option_string =  "#{self.option_string} --output #{tmp_file.path}"
       execute(command_with_options)
-      return IO.binread(tmp_file)
+      return IO.read(tmp_file.path)
     ensure
       tmp_file.close
       tmp_file.unlink
